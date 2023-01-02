@@ -1,0 +1,17 @@
+version: '3.6'
+services:
+  tizen:
+    image: tizenstudio:webcli-5.0
+    container_name: tizen
+    volumes:
+      - ./jellyfin/jellyfin-tizen:/jellyfin/jellyfin-tizen
+      - ./jellyfin/jellyfin-web:/jellyfin/jellyfin-web
+      - ./install.sh:/install.sh
+    restart: unless-stopped
+    networks:
+      - tizen
+
+networks:
+  tizen:
+    name: tizen-net
+  
