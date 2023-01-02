@@ -2,25 +2,26 @@
 # remote has extremely slow download rate
 ARG INSTALL_FROM=local
 
-FROM ubuntu AS base
+FROM ubuntu:latest AS base
 
-RUN apt update; apt -y upgrade; apt clean
-RUN apt install openjdk-19-jdk -y
+RUN apt-get update; apt-get -y upgrade
+RUN apt-get install -y curl wget
 
-RUN apt install -y git
-RUN apt install -y curl
+RUN apt-get install openjdk-19-jdk -y
+
+RUN apt-get install -y git
 
 RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
-RUN apt install -y nodejs
+RUN apt-get install -y nodejs
 
 RUN npm install yarn -g
 
 # openssh-server to keep the container running
-RUN apt -qq install -y openssh-server passwd
-RUN apt update; apt install wget zip -y
-RUN apt install vim nano -y
-RUN apt install xmlstarlet -y
-RUN apt update; apt -y upgrade; apt clean
+RUN apt-get -qq install -y openssh-server passwd
+RUN apt-get install zip -y
+RUN apt-get install vim nano -y
+RUN apt-get install xmlstarlet -y
+RUN apt-get clean
 
 # main user to be created to install tizan studio under
 ARG USER=tizen
