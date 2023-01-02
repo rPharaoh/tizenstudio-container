@@ -12,7 +12,7 @@ CERT_PASS=$(openssl rand -base64 9)
 /home/${USER}/tizen-studio/tools/ide/bin/tizen security-profiles add -n $CERT_NAME -a /home/${USER}/tizen-studio-data/keystore/author/tizencert.p12 -p $CERT_PASS
 
 # using created profile for signing
-tizen cli-config "profiles.path=/home/${USER}/tizen-studio-data/profile/profiles.xml"
+/home/${USER}/tizen-studio/tools/ide/bin/tizen cli-config "profiles.path=/home/${USER}/tizen-studio-data/profile/profiles.xml"
 
 # change password from profile
 xmlstarlet ed -u '/profiles/profile/profileitem/@password' -v "$CERT_PASS" /home/${USER}/tizen-studio-data/profile/profiles.xml
