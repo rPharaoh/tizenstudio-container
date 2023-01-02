@@ -68,7 +68,7 @@ RUN rm -rf /installer
 RUN chmod a+x ./tizen/web-cli_Tizen_Studio_5.0_ubuntu-64.bin
 
 # Path for the tools after installation
-ENV TizenToolsPath="export PATH=$PATH:/home/${USER}/tizen-studio/tools/ide/bin:/home/tizen/tizen-studio/tools"
+ENV TizenToolsPath="export PATH=$PATH:/home/${USER}/tizen-studio/tools/ide/bin:/home/${USER}/tizen-studio/tools"
 
 USER ${USER}
 
