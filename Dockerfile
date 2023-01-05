@@ -1,6 +1,6 @@
 # to check for local .bin package
 # remote has extremely slow download rate
-ARG INSTALL_FROM=local
+ARG INSTALL_FROM=remote
 
 FROM ubuntu:latest AS base
 

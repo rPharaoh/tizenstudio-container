@@ -1,4 +1,4 @@
 web-cli_Tizen_Studio_5.0_ubuntu-64.bin
-jellyfin/*
+code/*
 .env
 *.tar
